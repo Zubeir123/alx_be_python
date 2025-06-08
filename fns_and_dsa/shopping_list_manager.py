@@ -10,15 +10,19 @@ def main():
     shopping_list = []
     while True:
         display_menu()
-        choice = input("Enter your choice: ")
+        choice = input("Enter your choice: ").strip()
+
+        if not choice.isdigit():
+            print("Invalid input. Please enter a number between 1 and 4.")
+            continue
 
         if choice == '1':
             # Prompt for and add an item
-            item = input("Enter item to add: ")
+            item = input("Enter item to add: ").strip()
             shopping_list.append(item)
         elif choice == '2':
             # Prompt for and remove an item
-            item = input("Enter item to remove: ")
+            item = input("Enter item to remove: ").strip()
             if item in shopping_list:
                 shopping_list.remove(item)
             else:
