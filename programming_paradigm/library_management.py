@@ -6,6 +6,9 @@ class Book:
     def __str__(self):
         return f"{self.title} by {self.author}"
 
+    def return_book(self):
+        self._is_checked_out = False
+
 class Library:
     def __init__(self):
         self._books = []
@@ -22,7 +25,7 @@ class Library:
     def return_book(self, title):
         for book in self._books:
             if book.title == title:
-                book._is_checked_out = False
+                book.return_book()
                 print(f"'{book.title}' has been returned.")
                 return True
         print(f"No such checked out book found: '{title}'")
