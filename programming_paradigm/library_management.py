@@ -21,7 +21,7 @@ class Library:
         return False
     def return_book(self, title):
         for book in self._books:
-            if book.title == title and book._is_checked_out:
+            if book.title == title:
                 book._is_checked_out = False
                 print(f"'{book.title}' has been returned.")
                 return True
